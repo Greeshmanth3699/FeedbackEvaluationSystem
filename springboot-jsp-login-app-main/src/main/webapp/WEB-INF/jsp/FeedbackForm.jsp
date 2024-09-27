@@ -95,8 +95,8 @@
 </head>
 
 <body>
-    <h1>GeeksforGeeks</h1>
-    <h3>Feedback Form using HTML and CSS</h3>
+    <h1>STUDENT FEEDBACK FORM</h1>
+    <h3>Feedback Form For Faculty Teaching</h3>
     <div class="form-box">
         <div class="textup">
             <i class="fa fa-solid fa-clock"></i>

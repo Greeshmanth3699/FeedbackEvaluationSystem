@@ -34,6 +34,11 @@ public class MainController {
     public String viewLoginPage(ModelMap map) {
         return "login";  // Renders login.jsp when clicking "Login"
     }
+    
+    @GetMapping(value = "/feedbackform")
+    public String viewFeedbackFormPage(ModelMap map) {
+        return "FeedbackForm";  // Renders login.jsp when clicking "Login"
+    }
 
     // Handle login form submission - POST Request
     @RequestMapping(value = "/login", method = RequestMethod.POST)

@@ -234,7 +234,7 @@
         <h4>Advanced</h4>
         <li>
           <span class="material-symbols-outlined">person</span>
-          <a href="/FeedbackForm">Designer</a>
+          <a href="feedbackform">Designer</a>
         </li>
         <li>
           <span class="material-symbols-outlined">group</span>
