@@ -39,7 +39,7 @@
 <body>
     <div class="header">
         <!-- Icon on the top left corner -->
-        <img src="<%= request.getContextPath() %>/images/feedback.png" alt="Vchara Logo">
+        <img src="<%= request.getContextPath() %>/images/ProjectLogo.png" alt="Vchara Logo">
         <!-- Name next to the icon -->
         <h1>Vchara</h1>
     </div>

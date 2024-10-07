@@ -4,7 +4,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Unified Navigation and Sidebar</title>
+    <title>Vchara Institutional Feedback Evaluators</title>
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -213,7 +213,7 @@
     <!-- Sidebar -->
     <aside class="sidebar">
       <div class="logo">
-        <img src="<%= request.getContextPath() %>/images/feedback.png" alt="logo"> <!-- Placeholder for logo -->
+        <img src="<%= request.getContextPath() %>/images/ProjectLogo.png" alt="logo"> <!-- Placeholder for logo -->
         <h2>Vchara</h2>
       </div>
       <ul class="links">
@@ -234,23 +234,23 @@
         <h4>Advanced</h4>
         <li>
           <span class="material-symbols-outlined">person</span>
-          <a href="feedbackform">Designer</a>
+          <a href="FacultyFeedbackForm">Faculty Feedback</a>
         </li>
         <li>
           <span class="material-symbols-outlined">group</span>
-          <a href="#">Developer</a>
+          <a href="CourseFeedbackForm">Course Feedback</a>
         </li>
         <li>
           <span class="material-symbols-outlined">ambient_screen</span>
-          <a href="#">Magic Build</a>
+          <a href="ClassFeedbackForm">Class Feedback</a>
         </li>
         <li>
           <span class="material-symbols-outlined">pacemaker</span>
-          <a href="#">Theme Maker</a>
+          <a href="FacultyList">Faculty List</a>
         </li>
         <li>
           <span class="material-symbols-outlined">monitoring</span>
-          <a href="#">Analytic</a>
+          <a href="Analysis">Analytics</a>
         </li>
         <hr>
         <h4>Account</h4>
@@ -276,9 +276,9 @@
     <!-- Navigation Bar -->
     <ul class="nav-links">
       <li><a href="#">Dashboard</a></li>
-      <li class="center"><a href="#">Portfolio</a></li>
+      <li class="center"><a href="Profile">Profile</a></li>
       <li class="upward"><a href="#">Services</a></li>
-      <li class="forward"><a href="#">Feedback</a></li>
+      <li class="forward"><a href="Contact">Contact</a></li>
     </ul>
 
   </body>
