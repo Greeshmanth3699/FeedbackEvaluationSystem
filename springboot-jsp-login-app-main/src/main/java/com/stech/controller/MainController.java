@@ -24,6 +24,36 @@ public class MainController {
         return "home";  // Renders home.jsp (your welcome page)
     }
     
+    @GetMapping(value = "/Profile")
+    public String profile() {
+        return "Profile";  // Renders home.jsp (your welcome page)
+    }
+    
+    @GetMapping(value = "/Analysis")
+    public String analysis() {
+        return "Analysis";  // Renders home.jsp (your welcome page)
+    }
+    
+    @GetMapping(value = "/Contact")
+    public String contact() {
+        return "Contact";  // Renders home.jsp (your welcome page)
+    }
+    
+    @GetMapping(value = "/FacultyList")
+    public String facultylist() {
+        return "FacultyList";  // Renders home.jsp (your FacultyList page)
+    }
+    
+    @GetMapping(value = "/CourseFeedbackForm")
+    public String coursefeedback() {
+        return "CourseFeedbackForm";  // Renders home.jsp (your CourseFeedbackForm page)
+    }
+    
+    @GetMapping(value = "/ClassFeedbackForm")
+    public String classfeedback() {
+        return "ClassFeedbackForm";  // Renders home.jsp (your ClassFeedbackForm page)
+    }
+    
     @GetMapping(value = "/welcome")
     public String welcome() {
         return "welcome";  // Renders home.jsp (your welcome page)
@@ -35,14 +65,22 @@ public class MainController {
         return "login";  // Renders login.jsp when clicking "Login"
     }
     
-    @GetMapping(value = "/feedbackform")
+    @GetMapping(value = "/FacultyFeedbackForm")
     public String viewFeedbackFormPage(ModelMap map) {
-        return "FeedbackForm";  // Renders login.jsp when clicking "Login"
+        return "FacultyFeedbackForm";  // Renders login.jsp when clicking "Login"
     }
 
     // Handle login form submission - POST Request
     @RequestMapping(value = "/login", method = RequestMethod.POST)
-    public String showWelcomePage(ModelMap model, @RequestParam String name, @RequestParam String password) {
+    public String showWelcomePage(ModelMap model, 
+                                  @RequestParam(required = false) String name, 
+                                  @RequestParam(required = false) String password) {
+
+        // Check for missing parameters
+        if (name == null || password == null) {
+            model.put("errorMessage", "Please enter both name and password");
+            return "login";
+        }
 
         boolean isValidUser = service.validateUser(name, password);
 
@@ -56,6 +94,7 @@ public class MainController {
 
         return "welcome";  // Redirects to the welcome page upon successful login
     }
+
 
     // Map to the register page (register.jsp)
     @GetMapping(value = "/register")

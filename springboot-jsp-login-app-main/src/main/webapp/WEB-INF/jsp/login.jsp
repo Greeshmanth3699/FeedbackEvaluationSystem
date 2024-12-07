@@ -284,7 +284,7 @@
         <div class="form-content">
           <div class="login-form">
             <div class="title">Login</div>
-            <form action="loginServlet" method="post">
+            <form action="loginService" method="post">
               <div class="input-boxes">
                 <div class="input-box">
                   <i class="fas fa-envelope"></i>
