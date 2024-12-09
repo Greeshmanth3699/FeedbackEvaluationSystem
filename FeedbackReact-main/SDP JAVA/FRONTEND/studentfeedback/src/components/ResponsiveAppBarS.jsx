@@ -21,6 +21,7 @@ const pages = [
   'Send Feedback to Admin',
   'Send Feedback to Faculty',
   'View Feedback for Student',
+  'Faculty Hierarchy'
 ];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 

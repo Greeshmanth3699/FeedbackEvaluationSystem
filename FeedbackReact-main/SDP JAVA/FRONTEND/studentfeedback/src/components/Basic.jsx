@@ -1,7 +1,8 @@
 import React from 'react';
 import './Basic.css'; 
 import basisPhoto from '../assets/student-feedback-app.jpg';
-const Basic = () => {
+
+const Basic = ({ children }) => {
   return (
     <div className="basic-container">
       <nav className="navbar">
@@ -15,9 +16,17 @@ const Basic = () => {
       </nav>
 
       <div className="main-content">
-        <img src={basisPhoto} alt="Student Feedback System" />
-        <h1>Welcome to the Student Feedback System</h1>
-        <p>Providing a platform to share valuable feedback efficiently.</p>
+        {children ? (
+          children
+        ) : (
+          <>
+            <h1>Welcome to the Student Feedback System</h1>
+            <p>Providing a platform to share valuable feedback efficiently.</p>
+            <br />
+            <img src={basisPhoto} alt="Student Feedback System" />
+            <br />
+          </>
+        )}
       </div>
     </div>
   );

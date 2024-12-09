@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useRef } from "react";
+import emailjs from "@emailjs/browser";
 import {
   Container,
   Typography,
@@ -13,7 +14,26 @@ import EmailIcon from "@mui/icons-material/Email";
 import PhoneIcon from "@mui/icons-material/Phone";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 
-const ContactPage = () => {
+const ContactPageContent = () => {
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm("service_zlz4d4m", "template_l9inx9s", form.current, "pKmYULOEnmqMCuZUG")
+      .then(
+        () => {
+          alert("Message sent successfully!");
+          form.current.reset(); // Reset the form after successful submission
+        },
+        (error) => {
+          console.error("Error sending email:", error);
+          alert("Failed to send the message. Please try again.");
+        }
+      );
+  };
+
   return (
     <Container sx={{ marginTop: 4 }}>
       {/* Page Title */}
@@ -56,7 +76,7 @@ const ContactPage = () => {
             <CardContent>
               <Typography variant="h6">Address</Typography>
               <Typography variant="body2" color="textSecondary">
-                K L University, Vaddeswaram
+                K L University, Vaddeswaram.
               </Typography>
             </CardContent>
           </Card>
@@ -66,6 +86,8 @@ const ContactPage = () => {
       {/* Contact Form */}
       <Box
         component="form"
+        ref={form}
+        onSubmit={sendEmail}
         sx={{
           marginTop: 6,
           display: "flex",
@@ -78,27 +100,18 @@ const ContactPage = () => {
         <Typography variant="h5" component="h2" gutterBottom>
           Send Us a Message
         </Typography>
-        <TextField
-          label="Your Name"
-          variant="outlined"
-          fullWidth
-          required
-        />
-        <TextField
-          label="Your Email"
-          variant="outlined"
-          fullWidth
-          required
-        />
+        <TextField label="Your Name" name="user_name" variant="outlined" fullWidth required />
+        <TextField label="Your Email" name="user_email" variant="outlined" fullWidth required />
         <TextField
           label="Your Message"
+          name="message"
           variant="outlined"
           multiline
           rows={4}
           fullWidth
           required
         />
-        <Button variant="contained" color="primary" size="large">
+        <Button type="submit" variant="contained" color="primary" size="large">
           Submit
         </Button>
       </Box>
@@ -106,4 +119,4 @@ const ContactPage = () => {
   );
 };
 
-export default ContactPage;
+export default ContactPageContent;

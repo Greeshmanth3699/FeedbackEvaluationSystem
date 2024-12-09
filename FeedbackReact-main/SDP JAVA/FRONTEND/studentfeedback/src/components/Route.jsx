@@ -21,6 +21,7 @@ import StudentFeedBackToAdmin from './HomePages/StudentFeedBackToAdmin';
 import ViewFeedbackS from './HomePages/ViewFeedbackS';
 import SendFeedbackToAdminByFaculty from './HomePages/SendFeedbackToAdminByFaculty';
 import ViewFeedbackF from './HomePages/ViewFeedbackF';
+import FacultyList from './HomePages/FacultyList';
 const RouteComponent = () => {
   return (
     <Router>
@@ -50,6 +51,7 @@ const RouteComponent = () => {
         <Route path="/sendfeedbacktofaculty" element={<StudentFeedBackF />} />
         <Route path="/sendfeedbacktoadmin" element={<StudentFeedBackToAdmin />} />
         <Route path="/viewfeedbackforstudent" element={<ViewFeedbackS />} />
+        <Route path="/facultyhierarchy" element={<FacultyList />} />
         
         {/* Static Pages */}
         <Route path="/AboutPage" element={<AboutPage />} />
